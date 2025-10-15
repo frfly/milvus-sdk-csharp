@@ -32,11 +32,11 @@ jobs:
       - name: Pack
         run: dotnet pack -c Release -o Artifacts
 
-      - name: Upload artifacts (nupkg)
-        uses: actions/upload-artifact@v3
-        with:
-          name: nupkgs
-          path: |
-            Artifacts/*.nupkg
-            Artifacts/*.snupkg
+#      - name: Upload artifacts (nupkg)
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: nupkgs
+#          path: |
+#            Artifacts/*.nupkg
+#            Artifacts/*.snupkg
 

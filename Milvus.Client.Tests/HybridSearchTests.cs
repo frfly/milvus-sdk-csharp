@@ -14,7 +14,7 @@ public class HybridSearchTests(
     {
         List<HybridSearchRequest<float>> searchRequests =
         [
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 0.1f, 0.2f },
                 SimilarityMetricType.L2,
@@ -41,12 +41,12 @@ public class HybridSearchTests(
     {
         List<HybridSearchRequest<float>> searchRequests =
         [
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 0.1f, 0.2f },
                 SimilarityMetricType.L2,
                 1),
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 5.1f, 6.2f },
                 SimilarityMetricType.L2,
@@ -73,12 +73,12 @@ public class HybridSearchTests(
     {
         List<HybridSearchRequest<float>> searchRequests =
         [
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 0.1f, 0.2f },
                 SimilarityMetricType.L2,
                 1),
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector2",
                 new[] { 0.1f, 0.2f, 0.3f },
                 SimilarityMetricType.L2,
@@ -105,12 +105,12 @@ public class HybridSearchTests(
     {
         List<HybridSearchRequest<float>> searchRequests =
         [
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 0.1f, 0.2f },
                 SimilarityMetricType.L2,
                 1),
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 5.1f, 6.2f },
                 SimilarityMetricType.L2,
@@ -142,12 +142,12 @@ public class HybridSearchTests(
     {
         List<HybridSearchRequest<float>> searchRequests =
         [
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 0.1f, 0.2f },
                 SimilarityMetricType.L2,
                 2),
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 8f, 9f },
                 SimilarityMetricType.L2,
@@ -174,12 +174,12 @@ public class HybridSearchTests(
     {
         List<HybridSearchRequest<float>> searchRequests =
         [
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 0.1f, 0.2f },
                 SimilarityMetricType.L2,
                 5),
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 8f, 9f },
                 SimilarityMetricType.L2,
@@ -222,12 +222,12 @@ public class HybridSearchTests(
     {
         List<HybridSearchRequest<float>> searchRequests =
         [
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 0.1f, 0.2f },
                 SimilarityMetricType.L2,
                 5),
-            HybridSearchRequest.CreateFLoat(
+            HybridSearchRequest.CreateFloat(
                 "float_vector",
                 new[] { 8f, 9f },
                 SimilarityMetricType.L2,

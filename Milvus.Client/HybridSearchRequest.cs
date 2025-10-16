@@ -84,7 +84,7 @@ public abstract class HybridSearchRequest
     /// </param>
     /// <param name="parameters">Various additional optional parameters to configure the similarity search.
     /// </param>
-    public static HybridSearchRequest<float> CreateFLoat(string vectorFieldName,
+    public static HybridSearchRequest<float> CreateFloat(string vectorFieldName,
         ReadOnlyMemory<float> vector,
         SimilarityMetricType metricType,
         int limit,

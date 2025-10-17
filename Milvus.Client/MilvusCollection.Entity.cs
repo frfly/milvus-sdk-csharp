@@ -427,12 +427,6 @@ public partial class MilvusCollection
         }
     }
 
-    private static void PopulateBinaryVectorData(ReadOnlyMemory<byte> vector, PlaceholderValue placeholderValue)
-    {
-        placeholderValue.Type = Grpc.PlaceholderType.BinaryVector;
-        placeholderValue.Values.Add(ByteString.CopyFrom(vector.Span));
-    }
-
     private static void PopulateFloatVectorData(IReadOnlyList<ReadOnlyMemory<float>> vectors, PlaceholderValue placeholderValue)
     {
         placeholderValue.Type = Grpc.PlaceholderType.FloatVector;
@@ -474,46 +468,6 @@ public partial class MilvusCollection
 
             ArrayPool<byte>.Shared.Return(bytes);
         }
-    }
-
-    private static void PopulateFloatVectorData(ReadOnlyMemory<float> vector, PlaceholderValue placeholderValue)
-    {
-        placeholderValue.Type = Grpc.PlaceholderType.FloatVector;
-
-#if NET6_0_OR_GREATER
-        if (BitConverter.IsLittleEndian)
-        {
-            placeholderValue.Values.Add(ByteString.CopyFrom(MemoryMarshal.AsBytes(vector.Span)));
-            return;
-        }
-#endif
-
-        int length = vector.Length * sizeof(float);
-
-        byte[] bytes = ArrayPool<byte>.Shared.Rent(length);
-
-        for (int i = 0; i < vector.Length; i++)
-        {
-            Span<byte> destination = bytes.AsSpan(i * sizeof(float));
-            float f = vector.Span[i];
-#if NET6_0_OR_GREATER
-            BinaryPrimitives.WriteSingleLittleEndian(destination, f);
-#else
-                    if (!BitConverter.IsLittleEndian)
-                    {
-                        unsafe
-                        {
-                            int tmp = BinaryPrimitives.ReverseEndianness(*(int*)&f);
-                            f = *(float*)&tmp;
-                        }
-                    }
-                    MemoryMarshal.Write(destination, ref f);
-#endif
-        }
-
-        placeholderValue.Values.Add(ByteString.CopyFrom(bytes.AsSpan(0, length)));
-
-        ArrayPool<byte>.Shared.Return(bytes);
     }
 
     /// <summary>
